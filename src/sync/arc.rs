@@ -280,3 +280,9 @@ impl<T: ?Sized> Borrow<T> for Arc<T> {
         self
     }
 }
+
+impl<T> PartialEq for Arc<T> {
+    fn eq(&self, other: &Self) -> bool {
+        *self == *other
+    }
+}
